@@ -17,9 +17,9 @@ export class UserDetailComponent implements OnInit {
   organizationDataSource = new MatTableDataSource<Organization>;
   pullRequestDataSource = new MatTableDataSource<PullRequest>;
 
-  @ViewChild('organizationPaginator',  {static: true})
+  @ViewChild('organizationPaginator')
   organizationPaginator!: MatPaginator;
-  @ViewChild('pullRequestPaginator',  {static: true})
+  @ViewChild('pullRequestPaginator')
   pullRequestPaginator!: MatPaginator;
 
   constructor(private service: ApiService, private route: ActivatedRoute) {}
