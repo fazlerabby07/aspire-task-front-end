@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./list-users.component.scss']
 })
 export class ListUsersComponent implements OnInit {
-  displayedColumns: string[] = ['nickname', 'githubProfile', 'action'];
+  displayedColumns: string[] = ['position', 'nickname', 'githubProfile', 'action'];
   dataSource = new MatTableDataSource<User>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

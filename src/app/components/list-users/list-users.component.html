@@ -5,7 +5,11 @@
     <div style="margin-top: 10px">
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
-
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+                </ng-container>
                 <!-- Name Column -->
                 <ng-container matColumnDef="nickname">
                     <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -15,13 +19,13 @@
                 <!-- Weight Column -->
                 <ng-container matColumnDef="githubProfile">
                     <th mat-header-cell *matHeaderCellDef> Github link </th>
-                    <td mat-cell *matCellDef="let element"> {{element.githubProfile}} </td>
+                    <td mat-cell *matCellDef="let element"> <a href={{element.githubProfile}}>{{element.githubProfile}}</a></td>
                 </ng-container>
 
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef> Action </th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-icon-button color="primary" [routerLink]="['/userDetails', element.nickname]" >
+                        <button mat-icon-button color="primary" [routerLink]="['/userDetails', element.nickname]">
                             <mat-icon>open_in_new</mat-icon>
                         </button>
                     </td>
@@ -30,7 +34,7 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
 
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons
                 aria-label="Select page of periodic elements">
             </mat-paginator>
         </div>

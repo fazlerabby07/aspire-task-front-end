@@ -11,8 +11,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit {
-  organizationDisplayedColumns: string[] = ['login', 'avatar_url', 'link'];
-  pullRequestDisplayedColumns: string[] = ['title', 'issue_url', 'repo_name', 'body', 'created_at'];
+  organizationDisplayedColumns: string[] = ['position', 'login', 'avatar_url', 'link'];
+  pullRequestDisplayedColumns: string[] = ['title', 'issue_url', 'repo_name', 'created_at', 'body'];
   
   organizationDataSource = new MatTableDataSource<Organization>;
   pullRequestDataSource = new MatTableDataSource<PullRequest>;
