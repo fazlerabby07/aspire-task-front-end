@@ -17,11 +17,6 @@ export class UserDetailComponent implements OnInit {
   organizationDataSource = new MatTableDataSource<Organization>;
   pullRequestDataSource = new MatTableDataSource<PullRequest>;
 
-  @ViewChild('organizationPaginator')
-  organizationPaginator!: MatPaginator;
-  @ViewChild('pullRequestPaginator')
-  pullRequestPaginator!: MatPaginator;
-
   constructor(private service: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -39,10 +34,7 @@ export class UserDetailComponent implements OnInit {
       .subscribe((data: User) => {
         this.user = data;
         this.organizationDataSource = new MatTableDataSource(data.organizations)
-        this.organizationDataSource.paginator = this.organizationPaginator;
-
         this.pullRequestDataSource = new MatTableDataSource(data.pullRequests);
-        this.pullRequestDataSource.paginator = this.pullRequestPaginator;
       });
   }
   

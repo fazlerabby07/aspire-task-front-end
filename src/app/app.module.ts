@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [AppComponent, ListUsersComponent, UserDetailComponent],
@@ -28,6 +29,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatToolbarModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
