@@ -13,7 +13,6 @@ export class ListUsersComponent implements OnInit {
   displayedColumns: string[] = ['position', 'nickname', 'githubProfile', 'action'];
   dataSource = new MatTableDataSource<User>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private service: ApiService) {}
 
@@ -24,7 +23,6 @@ export class ListUsersComponent implements OnInit {
   getAllUsers() {
     this.service.getAllUsers().subscribe((data:User[]) => {
       this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
     } );
   }
 
